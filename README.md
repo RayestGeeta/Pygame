@@ -7,4 +7,4 @@
 </video>
 
 
-<iframe  src="./video.mp4" frameborder="0" allowfullscreen></iframe>
+![image](poster.png)
