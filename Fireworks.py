@@ -146,7 +146,7 @@ class Fire:
 
 
 
-def main(number , cs):
+def main(number , cs, f):
 
     fire = Fire()
     pygame.init()
@@ -223,19 +223,34 @@ def main(number , cs):
         if 1500 < sim_time:
             sim_time = 0
 
-        if sim_time == 0:
-            plist1 = []
-            plist2 = []
-            plist3 = []
-            plist4 = []
-            plist5 = []
+        if f == 'no':
+            if sim_time == 0:
+                plist1 = []
+                plist2 = []
+                plist3 = []
+                plist4 = []
+                plist5 = []
 
-            for i in range(number):
-                plist1.append(Particle(0, 0, 0, (random.random(), random.random(), random.random(), 1)))
-                plist2.append(Particle(-5, 0, 5, cs[1]))
-                plist3.append(Particle(-5, 0, -5, (random.random(), random.random(), random.random(), 1)))
-                plist4.append(Particle(5, 0, -5, cs[3]))
-                plist5.append(Particle(5, 0, 5, (random.random(), random.random(), random.random(), 1)))
+                for i in range(number):
+                    plist1.append(Particle(0, 0, 0, (random.random(), random.random(), random.random(), 1)))
+                    plist2.append(Particle(-5, 0, 5, cs[1]))
+                    plist3.append(Particle(-5, 0, -5, (random.random(), random.random(), random.random(), 1)))
+                    plist4.append(Particle(5, 0, -5, cs[3]))
+                    plist5.append(Particle(5, 0, 5, (random.random(), random.random(), random.random(), 1)))
+        else:
+            if sim_time == 0:
+                plist1 = []
+                plist2 = []
+                plist3 = []
+                plist4 = []
+                plist5 = []
+
+                for i in range(number):
+                    plist1.append(Particle(0, 0, 0, cs[0]))
+                    plist2.append(Particle(-5, 0, 5, cs[1]))
+                    plist3.append(Particle(-5, 0, -5, cs[2]))
+                    plist4.append(Particle(5, 0, -5, cs[3]))
+                    plist5.append(Particle(5, 0, 5, cs[4]))
         if sim_time == 200:
             plist6 = []
             for i in range(len(plist1)):
